@@ -1,0 +1,65 @@
+import 'package:flutter/material.dart';
+
+class AddNotesCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.fromLTRB(0, 5, 0, 5),
+      decoration: BoxDecoration(
+        color: Color(0xAF9B9898),
+        borderRadius: BorderRadius.circular(0), // Set the border radius here
+      ),
+      child: ExpansionTile(
+        title: Row(
+          children: [
+            CircleAvatar(
+              backgroundImage: AssetImage('your_avatar_image_path.png'),
+              radius: 16,
+            ),
+            SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                'Notes',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ],
+        ),
+        children: [
+          Container(
+            color: Colors.white,
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 10.0, right: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: TextField(
+                              decoration: InputDecoration(
+                                hintText: 'Notes',
+                                border: InputBorder.none,
+                                contentPadding: EdgeInsets.all(12),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
